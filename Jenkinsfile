@@ -58,3 +58,4 @@ def eachStage(String stagename) {
     string(name: 'CHEF_INJECT_COMPAT_RESOURCE_COOKBOOK_VERSION', defaultValue: 'false', description: 'whether to inject compat_resource cookbook version (eg true for some envs)'),
     booleanParam(name: 'dokitchen', defaultValue: true, description: 'Whether to run kitchen tests'),
     booleanParam(name: 'doshutit', defaultValue: true, description: 'Whether to run shutit tests')
+    ]) ])
