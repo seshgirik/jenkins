@@ -1,5 +1,5 @@
 node("master") {
-    
+  println "welcome to parallel project"   
   def staticTests = [: ]
   staticTests["codeAnalysis"] = {
     stage("staticAnalysis") {}
