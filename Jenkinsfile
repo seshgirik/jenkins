@@ -1,7 +1,5 @@
 node("master") {
     
-
-
   def staticTests = [: ]
   staticTests["codeAnalysis"] = {
     stage("staticAnalysis") {}
@@ -26,34 +24,24 @@ node("master") {
   }
 
 }
-
-
-
 def allBuilds() {
-
   buildsarray = []
-
   for (i = 0; i < 4; i++) {
-
     stages = [: ]
 
     for (stage in ["one", "two", "three"]) {
       n = "$stage $i"
       stages[n] = eachStage(n)
-
     }
     buildsarray.add(stages)
-
   }
   return buildsarray
-
 }
 def eachStage(String stagename) {
 
   return {
     stage("Inspection from fun $stagename") {}
   }
-
 }
 
 // Parameters for the build
