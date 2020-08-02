@@ -27,14 +27,16 @@ node("master") {
 def allBuilds() {
   buildsarray = []
   for (i = 0; i < 4; i++) {
-    stages = [: ]
+    stages = [: ]  // This is map in groovy (dictionary in python)
 
     for (stage in ["one", "two", "three"]) {
       n = "$stage $i"
       stages[n] = eachStage(n)
     }
     buildsarray.add(stages)
+    println stages
   }
+  println buildsarray
   return buildsarray
 }
 def eachStage(String stagename) {
