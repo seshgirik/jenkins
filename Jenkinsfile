@@ -13,6 +13,8 @@ node("master") {
   }
 
   stage("codeAnalysis") {
+    println staticTests
+
     parallel(staticTests)
 
   }
