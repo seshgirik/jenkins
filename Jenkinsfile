@@ -14,6 +14,7 @@ node("master") {
 
   stage("codeAnalysis") {
     println staticTests
+    //{codeAnalysis=org.jenkinsci.plugins.workflow.cps.CpsClosure2@2bd63470, codeInspection=org.jenkinsci.plugins.workflow.cps.CpsClosure2@2088ecae}
 
     parallel(staticTests)
 
