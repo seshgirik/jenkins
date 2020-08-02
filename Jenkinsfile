@@ -27,7 +27,7 @@ node("master") {
 def allBuilds() {
   buildsarray = []
   for (i = 0; i < 4; i++) {
-    stages = [: ]  // This is map in groovy (dictionary in python)
+    stages = [: ]  // This is map in groovy (dictionary in python) . buildsarray is a list which contains dictionaries
 
     for (stage in ["one", "two", "three"]) {
       n = "$stage $i"
@@ -37,6 +37,9 @@ def allBuilds() {
     println stages
   }
   println buildsarray
+  // Build array oputput is 
+  //[{one 0=org.jenkinsci.plugins.workflow.cps.CpsClosure2@b07a01d, two 0=org.jenkinsci.plugins.workflow.cps.CpsClosure2@62af765, three 0=org.jenkinsci.plugins.workflow.cps.CpsClosure2@14e5a6de}, {one 1=org.jenkinsci.plugins.workflow.cps.CpsClosure2@5eb87ef7, two 1=org.jenkinsci.plugins.workflow.cps.CpsClosure2@164dc5cf, three 1=org.jenkinsci.plugins.workflow.cps.CpsClosure2@36cead20}, {one 2=org.jenkinsci.plugins.workflow.cps.CpsClosure2@28102bd2, two 2=org.jenkinsci.plugins.workflow.cps.CpsClosure2@62879acb, three 2=org.jenkinsci.plugins.workflow.cps.CpsClosure2@753b5fa4}, {one 3=org.jenkinsci.plugins.workflow.cps.CpsClosure2@40ebec57, two 3=org.jenkinsci.plugins.workflow.cps.CpsClosure2@7e51a073, three 3=org.jenkinsci.plugins.workflow.cps.CpsClosure2@40c7c7e7}]
+  
   return buildsarray
 }
 def eachStage(String stagename) {
