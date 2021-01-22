@@ -29,11 +29,12 @@ node("master") {
 }
 def allBuilds() {
   buildsarray = []
-  for (i = 0; i < 4; i++) {
+  //for (i = 0; i < 4; i++) {
+    for (os in ["rhel", "centos", "windows"]) {
     stages = [: ]  // This is map in groovy (dictionary in python) . buildsarray is a list which contains dictionaries
 
     for (stage in ["one", "two", "three"]) {
-      n = "$stage $i"
+      n = "$stage $os"
       stages[n] = eachStage(n)
     }
     buildsarray.add(stages)
