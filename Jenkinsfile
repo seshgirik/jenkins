@@ -16,6 +16,13 @@ node {
     println staticTests
     //{codeAnalysis=org.jenkinsci.plugins.workflow.cps.CpsClosure2@2bd63470, codeInspection=org.jenkinsci.plugins.workflow.cps.CpsClosure2@2088ecae}
 
+    //closure call starts
+    mainMethod() {
+    // everything you put here is the closure that will be passed
+    // as the argument "body" in the mainMethod() (inside patchBuildTools.groovy)
+    echo "hello world from Closure"
+    } 
+    // closure call ends
     parallel(staticTests)
 
   }
@@ -52,6 +59,17 @@ def eachStage(String stagename) {
     stage("Inspection from fun $stagename") {}
   }
 }
+
+// groovy closure start
+
+def mainMethod(Closure body) {
+    println "enter"
+    body() // executes the closure passed with mainMethod() from the Jenkinsfile.
+    println "exit"
+}
+
+
+
 
 // Parameters for the build
   properties([parameters([
