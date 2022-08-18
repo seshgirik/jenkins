@@ -22,6 +22,8 @@ node {
     // everything you put here is the closure that will be passed
     // as the argument "body" in the mainMethod() (inside patchBuildTools.groovy)
     echo "hello world from Closure"
+    println "hello world from Closure"
+
     } 
     // closure call ends
     parallel(staticTests)
