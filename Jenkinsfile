@@ -1,4 +1,4 @@
-node("Built-In Node") {
+node {
   println "welcome to parallel project"   
   def staticTests = [: ]
   staticTests["codeAnalysis"] = {
