@@ -1,3 +1,6 @@
+#!/usr/bin/env groovy
+
+@Library('shared-library@master')
 node {
   println "welcome to parallel project"   
   def staticTests = [: ]
@@ -71,6 +74,7 @@ def mainMethod(Closure body) {
     println "enter"
     body() // executes the closure passed with mainMethod() from the Jenkinsfile.
     println "exit"
+    filterLogs('WARNING' 1)
 }
 
 
