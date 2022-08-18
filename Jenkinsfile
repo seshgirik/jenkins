@@ -23,6 +23,8 @@ node {
     // as the argument "body" in the mainMethod() (inside patchBuildTools.groovy)
     echo "hello world from Closure"
     println "hello world from Closure"
+    println "Job '${JOB_NAME}' (${BUILD_NUMBER}) "
+
 
     } 
     // closure call ends
