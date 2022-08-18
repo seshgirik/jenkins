@@ -1,4 +1,4 @@
-node("master") {
+node("controller") {
   println "welcome to parallel project"   
   def staticTests = [: ]
   staticTests["codeAnalysis"] = {
