@@ -18,6 +18,7 @@ node {
 
     //closure call starts
     mainMethod() {
+    // https://stackoverflow.com/questions/50414641/closures-in-jenkinsfile-groovy-callbacks-or-delegate
     // everything you put here is the closure that will be passed
     // as the argument "body" in the mainMethod() (inside patchBuildTools.groovy)
     echo "hello world from Closure"
